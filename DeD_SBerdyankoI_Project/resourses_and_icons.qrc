@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Filling/Mainwindow/Table_Green.jpg</file>
+        <file>Filling/Mainwindow/Table_Red.jpg</file>
+        <file>Filling/artifacts/GeneralInformationIcon.jpg</file>
+        <file>Filling/Mainwindow/CancelAll.png</file>
+        <file>Filling/Mainwindow/Save.png</file>
+        <file>Filling/artifacts/VezaVulkanIcon.png</file>
+        <file>Filling/artifacts/ProvodIcon.png</file>
+        <file>Filling/artifacts/RezinaIcon.png</file>
+        <file>Filling/artifacts/VezaNovayaIcon.png</file>
+        <file>Filling/Mainwindow/AboutIcon.png</file>
+        <file>Filling/Mainwindow/WriteMeIcon.png</file>
+        <file>Filling/Mainwindow/Exit.png</file>
+        <file>Filling/LogoDB.jpg</file>
+        <file>Filling/OtherWindows/generalinformation/AllRestart.bmp</file>
+        <file>Filling/OtherWindows/generalinformation/EditTimingRezina.bmp</file>
+        <file>Filling/OtherWindows/generalinformation/VezaVulkanEditCorrection.bmp</file>
+        <file>Filling/OtherWindows/writeme/E-Mail.jpg</file>
+        <file>Filling/OtherWindows/writeme/Skype.png</file>
+        <file>Filling/OtherWindows/writeme/Telegram.jpg</file>
+        <file>Filling/OtherWindows/writeme/DeD_Game.jpg</file>
+    </qresource>
+</RCC>

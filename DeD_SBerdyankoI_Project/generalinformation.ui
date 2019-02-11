@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GeneralInformation</class>
+ <widget class="QDialog" name="GeneralInformation">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>640</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Общие сведения</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resourses_and_icons.qrc">
+    <normaloff>:/Filling/artifacts/GeneralInformationIcon.jpg</normaloff>:/Filling/artifacts/GeneralInformationIcon.jpg</iconset>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>10</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QTextBrowser" name="GeneralInformationText">
+     <property name="acceptDrops">
+      <bool>true</bool>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="midLineWidth">
+      <number>0</number>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAsNeeded</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAsNeeded</enum>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; color:#aa0000;&quot;&gt;Важно!!!&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt; color:#aa0000;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; color:#aa0000;&quot;&gt;Программа НИКАК не взаимодействует с файлами игры (Сталкер онлайн) и НИКАКИМ образом не связывается с игровыми серверами!!! Работает автономно и на локальном уровне.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt; color:#aa0000;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; color:#aa0000;&quot;&gt;Данный софт считает респы артефактов, основываясь на времени ВАШЕГО компьютера, а не серверного времени! Если время Вашего компьютера отличается от серверного времени, ориентируйтесь строго по Вашему времени, чтобы не запутаться. Рекомендуется периодически обновлять системные часы через сервер time.windows.com.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt; color:#aa0000;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; color:#000000;&quot;&gt;1. Проект ориентирован на максимально точное вычисление респов артефактов таких, как : Резина (глобальный респ), Везувий Вулкан, Везувий Новая Земля, Проводник. Всё, что необходимо от пользователя  - знать время последнего рестарта сервера (от него и формируется респ вышеперечисленных артефактов). Программа просчитывает респы артефактов на текущий день и на неделю вперед, и имеет необходимый функционал для точного просчета и корректировок респауна каждого из видов артефактов, названных выше.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt; color:#000000;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; color:#000000;&quot;&gt;2. Чтобы посчитать респ, пользователю необходимо ввести время ближайшего рестарта сервера в поле &amp;quot;Изменить общую Дату/Время рестарта&amp;quot; (см. ниже) :&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt; color:#000000;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; color:#000000;&quot;&gt; &lt;/span&gt;&lt;img src=&quot;:/Filling/OtherWindows/generalinformation/AllRestart.bmp&quot; /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;После применения изменений, Дата/Время рестарта каждого вида артефактов (Резина, Везувий Вулкан, Везувий Новая Земля, Проводник) будут изменены на значение общей Даты/Времени рестарта.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Далее программа всё посчитает за Вас!&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;3. Для каждого вида артефактов существует свое время рестарта, не зависящее от других. Необходимо это для корректировок респов артефактов, принцип работы которых будет описан ниже.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;4. Все изменения пользователя, а именно : Оповещение о начале Респа, все Даты/Время рестарта, корректировки, сохраняются в файл, т.е. после каждого перезапуска программы Вам не нужно заново вводить время рестарта и прочее. Достаточно только сохранить все изменения перед закрытием программы. Папка с файлами программы хранится в : {Ваш системный диск}:\zDeD_SBerdyankoI_Timing\ . Если не хотите потерять изменения, введенные Вами по ходу использования программы - не удаляйте эту папку.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;5. Программа написана одним человеком (спасибо VOLKODAV за помощь с оформлением), в дальнейшем планируется ее модернизация, исправление багов/ошибок и дополнение контентом. Все зависит от Ваших предложений (контактные данные с разработчиком будут в справке, поле &amp;quot;Обратная связь&amp;quot;).&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;6. Нюансы, связанные с респами конкретных артефактов :&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; color:#aa0000;&quot;&gt;6.1 Резина. &lt;/span&gt;&lt;img src=&quot;:/Filling/artifacts/RezinaIcon.png&quot; width=&quot;32&quot; height=&quot;32&quot; /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;В программе указан ГЛОБАЛЬНЫЙ респ Резины по всем локациям. Это означает, что Резина будет появляться в АБСОЛЮТНО любой аномалии на любой локации (даже в любече, если найдете кислотку). Респ Резины длится примерно час после начала глобального респа, появляются артефакты всех типов и по принципу псевдорандома, т.е. могут появиться артефакты от Резины альфа до епсилон, а также Резина появляется последовательно в течении часа (может респиться в начале, в середине, или в конце часа, а может респиться вообще целый час без остановки). Необязательно, что Резина появляется только во время глобального респа - есть и промежуточные респы, но они рандомные и более скудные.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Возможна ситуация, когда программа запускается, вводится время последнего рестарта сервера, и, после ввода, получается так, что резина уже идет некоторое время (глобальный респ резины длится примерно час, как писалось выше). Эта ситуация учтена, респ резины, который уже идет, будет отмечен в таблице &lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#aa0000;&quot;&gt;темно-красным&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; цветом.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;В случае, если Вы уверены, что резина появилась немного раньше/позже, чем заявлено в программе, можно скорректировать время всех респов резины, рассчитанных на неделю вперед.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; color:#00aa00;&quot;&gt;Например&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;, если первые артефакты появились, на 5 минут раньше, вычитается 5 минут в строке &amp;quot;Корректировка резины&amp;quot; (см ниже) :&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;:/Filling/OtherWindows/generalinformation/EditTimingRezina.bmp&quot; /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;После корректировки строка рестарта резины и вся таблица, к ней относящаяся, сместятся на 5 минут назад.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Корректировать резину рекомендуется только тогда, когда Вы абсолютно уверены, что глобальный респ начался раньше/позже, чем указано в программе. Не забывайте тот момент, что во время глобального респа резина появляется по принципу псевдорандома, т.е. она может появиться не сразу, как заявлено в таблице респов, а позже (в начале часа, в середине, или в конце).&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; color:#aa0000;&quot;&gt;6.2 Везувий Вулкан &lt;/span&gt;&lt;img src=&quot;:/Filling/artifacts/VezaVulkanIcon.png&quot; width=&quot;32&quot; height=&quot;32&quot; /&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#aa0000;&quot;&gt;, Везувий Новая Земля &lt;/span&gt;&lt;img src=&quot;:/Filling/artifacts/VezaNovayaIcon.png&quot; width=&quot;32&quot; height=&quot;32&quot; /&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#aa0000;&quot;&gt;, Проводник &lt;/span&gt;&lt;img src=&quot;:/Filling/artifacts/ProvodIcon.png&quot; width=&quot;32&quot; height=&quot;32&quot; /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; color:#000000;&quot;&gt;Данные артефакты появляются строго по таймам, указанным в таблице. Возможны небольшие погрешности в респе артефактов (на практике +- две минуты).&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; color:#00aa00;&quot;&gt;Например&lt;/span&gt;&lt;span style=&quot; font-size:12pt; color:#000000;&quot;&gt;, Везувий Вулкан, по таблице Везувия, должен появиться в 21:00. Но по факту он появился на 30 секунд позже. В этом случае можно скорректировать таблицу респа соответствующего артефакта (см. ниже) :&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;:/Filling/OtherWindows/generalinformation/VezaVulkanEditCorrection.bmp&quot; /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;После корректировки вся таблица соответствующего артефакта (в данном примере Везувий Вулкан) сместится на время, указанное в поле &amp;quot;Общее время корректировки&amp;quot;. Данное поле хранит в себе всю сумму введенных корректировок, введенных за все время. То есть это поле аккумулирует все корректировки таблицы, введенные пользователем. Такой подход нужен в случае, если, например, Везувий Вулкан появился на 30 секунд позже, а последующий Везувий появился еще на 10 секунд позже. Тогда общее время корректировки будет равно 40 секундам. Работает также и в обратную сторону, если артефакт появился на несколько секунд раньше.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Вышеописанный алгоритм корректировок работает также для Везувия Новая Земля, и для Проводника.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="acceptRichText">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <layout class="QHBoxLayout" name="GeneralInformationCloseLayout">
+     <property name="topMargin">
+      <number>10</number>
+     </property>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="GeneralInformationPushButton">
+       <property name="text">
+        <string>Закрыть</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="resourses_and_icons.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>GeneralInformationPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>GeneralInformation</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>107</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>178</x>
+     <y>250</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
