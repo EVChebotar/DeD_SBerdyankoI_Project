@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include <QApplication>
-#include <Qdir>
+#include <QDir>
 #include <QSettings>
 #include <QDebug>
 
