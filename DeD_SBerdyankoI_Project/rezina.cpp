@@ -22,7 +22,11 @@ void Rezina :: organization(QDateTime RestartDateTime, QTableWidget *Table, QTim
     //2)Резина идет сейчас (в течении часа или меньше до текущего времени).
     //Хранит время предыдущего рестарта от текущего, НУЖНА ДЛЯ ИСКЛЮЧЕНИЯ п.1
 
+    //Отнять 30 минут от первого респа, т.к. первый респ после рестарта не смещается
+    RestartDateTime=RestartDateTime.addSecs( -1800 );
+
     while (RestartDateTime < QDateTime :: currentDateTime()){
+
 
         //Если Разница между текущим временем и ближайшим респом резины меньше/равна часу, то ближайшее время респа резины выводить в таблицу
         //Не выводить в случае, если рестарт был совсем недавно (то есть в промежутке < 6:20 до времени компьютера)
@@ -36,11 +40,15 @@ void Rezina :: organization(QDateTime RestartDateTime, QTableWidget *Table, QTim
 
         BufDateTimeForAll = RestartDateTime;
         RestartDateTime=RestartDateTime.addSecs(RezinaTime.second()+(RezinaTime.minute()+RezinaTime.hour()*60)*60);
+
+        //Смещение на 30 минут после каждого респа
+        RestartDateTime=RestartDateTime.addSecs( 1800 );
+
         BufDateTimeForColumn=RestartDateTime;
 
     }
-
     int i=0, j=0;
+
     //Проход по неделям
     while(j<7){
         int CheckDate = RestartDateTime.date().day()+1;
@@ -55,6 +63,7 @@ void Rezina :: organization(QDateTime RestartDateTime, QTableWidget *Table, QTim
 
 
             if ( (RestartDateTime.date().day() != CheckDate) && (RestartDateTime.date().month() !=CheckMonth) ){
+
                 QString timestr = RestartDateTime.time().toString("HH:mm:ss");
 
                 QTableWidgetItem *itm = new QTableWidgetItem;
@@ -65,6 +74,10 @@ void Rezina :: organization(QDateTime RestartDateTime, QTableWidget *Table, QTim
 
                 i++;
                 //qDebug() << "Рассчитанный тайм резины :" << timestr << endl;
+
+                //Смещение на 30 минут после каждого респа
+                RestartDateTime=RestartDateTime.addSecs( 1800 );
+
                 RestartDateTime=RestartDateTime.addSecs(RezinaTime.second()+(RezinaTime.minute()+RezinaTime.hour()*60)*60);
 
                 timestr.clear();
