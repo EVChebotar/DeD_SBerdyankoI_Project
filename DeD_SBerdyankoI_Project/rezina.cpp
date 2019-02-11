@@ -22,16 +22,16 @@ void Rezina :: organization(QDateTime RestartDateTime, QTableWidget *Table, QTim
     //2)Резина идет сейчас (в течении часа или меньше до текущего времени).
     //Хранит время предыдущего рестарта от текущего, НУЖНА ДЛЯ ИСКЛЮЧЕНИЯ п.1
 
-    //Отнять 30 минут от первого респа, т.к. первый респ после рестарта не смещается
-    RestartDateTime=RestartDateTime.addSecs( -1800 );
+    //Отнять 23:54 минут от первого респа, т.к. первый респ после рестарта не смещается
+    RestartDateTime=RestartDateTime.addSecs( -1434 )/* 23:54 */;
 
     while (RestartDateTime < QDateTime :: currentDateTime()){
 
 
         //Если Разница между текущим временем и ближайшим респом резины меньше/равна часу, то ближайшее время респа резины выводить в таблицу
         //Не выводить в случае, если рестарт был совсем недавно (то есть в промежутке < 6:20 до времени компьютера)
-        if( (RestartDateTime.secsTo( QDateTime :: currentDateTime() ) <= 3600 /* 1 час */ )
-                && BufDateTimeForAll.secsTo( QDateTime :: currentDateTime() ) >= 22800 /* тайминг резины (6:20) */ ) {
+        if( (RestartDateTime.secsTo( QDateTime :: currentDateTime() ) <= 5400 /* 1 час 30 минут */ )
+                && BufDateTimeForAll.secsTo( QDateTime :: currentDateTime() ) >= 23024 /* тайминг резины (6:23:54) */ ) {
 
             FirstRedOrNot=true;
 
@@ -40,9 +40,6 @@ void Rezina :: organization(QDateTime RestartDateTime, QTableWidget *Table, QTim
 
         BufDateTimeForAll = RestartDateTime;
         RestartDateTime=RestartDateTime.addSecs(RezinaTime.second()+(RezinaTime.minute()+RezinaTime.hour()*60)*60);
-
-        //Смещение на 30 минут после каждого респа
-        RestartDateTime=RestartDateTime.addSecs( 1800 );
 
         BufDateTimeForColumn=RestartDateTime;
 
@@ -74,9 +71,6 @@ void Rezina :: organization(QDateTime RestartDateTime, QTableWidget *Table, QTim
 
                 i++;
                 //qDebug() << "Рассчитанный тайм резины :" << timestr << endl;
-
-                //Смещение на 30 минут после каждого респа
-                RestartDateTime=RestartDateTime.addSecs( 1800 );
 
                 RestartDateTime=RestartDateTime.addSecs(RezinaTime.second()+(RezinaTime.minute()+RezinaTime.hour()*60)*60);
 

@@ -17,7 +17,7 @@ private :
 public :
     explicit Rezina(){
 
-        RezinaTime.setHMS(6,20,00);
+        RezinaTime.setHMS(6,23,54);
 
     }
 
