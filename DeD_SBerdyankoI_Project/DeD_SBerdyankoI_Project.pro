@@ -4,7 +4,7 @@ QT += core gui
 
 RC_ICONS = MainIcon.ico
 
-VERSION=1.0.0.2
+VERSION=1.0.0.3
 QMAKE_TARGET_COMPANY = DeD_SBerdyankoI_soft
 QMAKE_TARGET_PRODUCT = DeD_SBerdyankoI_Project
 QMAKE_TARGET_DESCRIPTION = Rezina/VezaVulkan/VezaNovaya/Provod timings from DeD_SBerdyankoI
