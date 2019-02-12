@@ -1,0 +1,17 @@
+debug/main.o
+debug/mainwindow.o
+debug/rezina.o
+debug/about.o
+debug/filescheck.o
+debug/vezavulkan.o
+debug/accumulator.o
+debug/vezanovaya.o
+debug/provod.o
+debug/generalinformation.o
+debug/writeme.o
+debug/ded_sberdyankoi_project_plugin_import.o
+debug/qrc_resourses_and_icons.o
+debug/moc_mainwindow.o
+debug/moc_about.o
+debug/moc_generalinformation.o
+debug/moc_writeme.o

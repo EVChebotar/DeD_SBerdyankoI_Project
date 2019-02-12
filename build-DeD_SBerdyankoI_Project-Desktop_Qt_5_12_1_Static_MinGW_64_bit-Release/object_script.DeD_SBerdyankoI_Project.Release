@@ -1,0 +1,17 @@
+release/main.o
+release/mainwindow.o
+release/rezina.o
+release/about.o
+release/filescheck.o
+release/vezavulkan.o
+release/accumulator.o
+release/vezanovaya.o
+release/provod.o
+release/generalinformation.o
+release/writeme.o
+release/ded_sberdyankoi_project_plugin_import.o
+release/qrc_resourses_and_icons.o
+release/moc_mainwindow.o
+release/moc_about.o
+release/moc_generalinformation.o
+release/moc_writeme.o
