@@ -2,10 +2,10 @@
 
 QDateTime FileCheck::ReadOrCreate(QString FileName,QDateTime RestartDateTime){
 
-    //Инициализация создания / чтения файла
+    // Инициализация создания / чтения файла
     QFile file(FileName);
 
-    //Если файла не существует, в него записывается время компьютера в формате dd MMM yyyy  H:mm:ss
+    // Если файла не существует, в него записывается время компьютера в формате dd MMM yyyy  H:mm:ss
     if ( !file.exists() ) {
 
         qDebug() << "Файла" << file.fileName() << "не существует, создание файла"  << endl;
@@ -24,7 +24,7 @@ QDateTime FileCheck::ReadOrCreate(QString FileName,QDateTime RestartDateTime){
         return RestartDateTime;
 
     }
-    //Если файл существует, читается дата/время из него в формате dd MMM yyyy  H:mm:ss
+    // Если файл существует, читается дата/время из него в формате dd MMM yyyy  H:mm:ss
     else{
 
         qDebug() << "Файл" << file.fileName() << "существует" << endl;
@@ -71,10 +71,10 @@ QDateTime FileCheck::ReadOrCreate(QString FileName,QDateTime RestartDateTime){
 
 void FileCheck :: ReadOrCreate(QString FileName, QTimeEdit *AccumCurrentTime){
 
-    //Инициализация создания / чтения файла
+    // Инициализация создания / чтения файла
     QFile file(FileName);
 
-    //Если файла не существует, в него записывается нулевое время в формате mm : ss
+    // Если файла не существует, в него записывается нулевое время в формате mm : ss
     if ( !file.exists() ) {
 
         qDebug() << "Файла" << file.fileName() << "не существует, создание файла"  << endl;
@@ -94,7 +94,7 @@ void FileCheck :: ReadOrCreate(QString FileName, QTimeEdit *AccumCurrentTime){
         AccumCurrentTime->setTime(AccumToNull);
 
     }
-    //Если файл существует, читается время из него в формате mm : ss
+    // Если файл существует, читается время из него в формате mm : ss
     else{
 
         qDebug() << "Файл" << file.fileName() << "существует" << endl;
@@ -105,7 +105,7 @@ void FileCheck :: ReadOrCreate(QString FileName, QTimeEdit *AccumCurrentTime){
 
         file.close();
 
-        QTime Accum = Accum.fromString(data, "mm : ss");    //хранит прочитанную из файла строку
+        QTime Accum = Accum.fromString(data, "mm : ss");    // Хранит прочитанную из файла строку
         data.clear();
 
         if(!Accum.isValid()){
@@ -114,7 +114,7 @@ void FileCheck :: ReadOrCreate(QString FileName, QTimeEdit *AccumCurrentTime){
 
             file.open(QIODevice::WriteOnly | QIODevice::Truncate);
 
-            QTime AccumToNull;  //хранит нулевое время
+            QTime AccumToNull;  // Хранит нулевое время
             AccumToNull.setHMS(0,0,0);
             QByteArray data = AccumToNull.toString("mm : ss").toUtf8();
 
@@ -139,10 +139,10 @@ void FileCheck :: ReadOrCreate(QString FileName, QTimeEdit *AccumCurrentTime){
 void FileCheck :: ReadOrCreate(QString FileName, QTimeEdit *AlertTime, bool ShortTime){
 
     if( ShortTime ){
-        //Инициализация создания / чтения файла
+        // Инициализация создания / чтения файла
         QFile file(FileName);
 
-        //Если файла не существует, в него записывается нулевое время в формате mm
+        // Если файла не существует, в него записывается нулевое время в формате mm
         if ( !file.exists() ) {
 
             qDebug() << "Файла" << file.fileName() << "не существует, создание файла"  << endl;
@@ -162,7 +162,7 @@ void FileCheck :: ReadOrCreate(QString FileName, QTimeEdit *AlertTime, bool Shor
             AlertTime->setTime(DefaultAlertTime);
 
         }
-        //Если файл существует, читается время из него в формате mm
+        // Если файл существует, читается время из него в формате mm
         else{
 
             qDebug() << "Файл" << file.fileName() << "существует" << endl;
@@ -173,7 +173,7 @@ void FileCheck :: ReadOrCreate(QString FileName, QTimeEdit *AlertTime, bool Shor
 
             file.close();
 
-            QTime Accum = Accum.fromString(data, "mm");    //хранит прочитанную из файла строку
+            QTime Accum = Accum.fromString(data, "mm");    // Хранит прочитанную из файла строку
             data.clear();
 
             if(!Accum.isValid()){
@@ -206,17 +206,17 @@ void FileCheck :: ReadOrCreate(QString FileName, QTimeEdit *AlertTime, bool Shor
 
 void FileCheck :: ReadOrCreate(QString FileName, QLineEdit *AccumPlusMinus){
 
-    //Инициализация создания / чтения файла
+    // Инициализация создания / чтения файла
     QFile file(FileName);
 
-    //Если файла не существует, в него записывается значение в формате + или -
+    // Если файла не существует, в него записывается значение в формате + или -
     if ( !file.exists() ) {
 
         qDebug() << "Файла" << file.fileName() << "не существует, создание файла"  << endl;
 
         file.open(QIODevice::WriteOnly);
 
-        QString PlusMinus = "+";  //хранит плюс
+        QString PlusMinus = "+";  // Хранит плюс
 
         QByteArray data = PlusMinus.toUtf8();
 
@@ -229,7 +229,7 @@ void FileCheck :: ReadOrCreate(QString FileName, QLineEdit *AccumPlusMinus){
         AccumPlusMinus->setText(PlusMinus);
 
     }
-    //Если файл существует, читается дата/время из него в формате + или -
+    // Если файл существует, читается дата/время из него в формате + или -
     else{
 
         qDebug() << "Файл" << file.fileName() << "существует" << endl;
@@ -240,7 +240,7 @@ void FileCheck :: ReadOrCreate(QString FileName, QLineEdit *AccumPlusMinus){
 
         file.close();
 
-        QString PlusMinus = data.toUtf8();    //хранит прочитанную из файла строку
+        QString PlusMinus = data.toUtf8();    // Хранит прочитанную из файла строку
         data.clear();
 
         if(PlusMinus != "+" && PlusMinus != "-"){
@@ -249,7 +249,7 @@ void FileCheck :: ReadOrCreate(QString FileName, QLineEdit *AccumPlusMinus){
 
             file.open(QIODevice::WriteOnly | QIODevice::Truncate);
 
-            QString PlusMinus = "+";  //хранит плюс
+            QString PlusMinus = "+";  // Хранит плюс
 
             QByteArray data = PlusMinus.toUtf8();
 
@@ -274,7 +274,7 @@ void FileCheck :: ReadOrCreate(QString FileName, QLineEdit *AccumPlusMinus){
 
 void FileCheck::SaveFile(QString FileName,QDateTime RestartDateTime){
 
-    //Инициализация создания / чтения файла
+    // Инициализация создания / чтения файла
     QFile file(FileName);
 
     file.open(QIODevice::WriteOnly);
@@ -290,7 +290,7 @@ void FileCheck::SaveFile(QString FileName,QDateTime RestartDateTime){
 
 void FileCheck::SaveFile(QString FileName, QTimeEdit *AccumCurrentTime){
 
-    //Инициализация создания / чтения файла
+    // Инициализация создания / чтения файла
     QFile file(FileName);
 
     file.open(QIODevice::WriteOnly);
@@ -307,7 +307,7 @@ void FileCheck::SaveFile(QString FileName, QTimeEdit *AccumCurrentTime){
 void FileCheck::SaveFile(QString FileName, QTimeEdit *AlertTime, bool ShortTime){
 
     if( ShortTime ){
-        //Инициализация создания / чтения файла
+        // Инициализация создания / чтения файла
         QFile file(FileName);
 
         file.open(QIODevice::WriteOnly);
@@ -324,7 +324,7 @@ void FileCheck::SaveFile(QString FileName, QTimeEdit *AlertTime, bool ShortTime)
 
 void FileCheck::SaveFile(QString FileName, QLineEdit *AccumPlusMinus){
 
-    //Инициализация создания / чтения файла
+    // Инициализация создания / чтения файла
     QFile file(FileName);
 
     file.open(QIODevice::WriteOnly);

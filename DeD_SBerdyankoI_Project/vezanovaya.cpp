@@ -6,29 +6,29 @@ void VezaNovaya :: organization(QDateTime RestartDateTime, QTableWidget *Table, 
     Table->setRowCount(5);
     Table->clear();
 
-    QStringList CurrentWeek;    //Массив строк хранит в себе дни недели таблицы
-    QDateTime BufDateTimeForColumn = RestartDateTime,   //Буфер для формирования дней недели в таблице
-            NewTimeEtalon = RestartDateTime ; //По этой переменной будут формироваться поля таблицы, учитывая эталонное время
+    QStringList CurrentWeek;    // Массив строк хранит в себе дни недели таблицы
+    QDateTime BufDateTimeForColumn = RestartDateTime,   // Буфер для формирования дней недели в таблице
+            NewTimeEtalon = RestartDateTime ; // По этой переменной будут формироваться поля таблицы, учитывая эталонное время
 
-    //UTC, хранимое в qint64 с соответствующим UTC знаком
+    // UTC, хранимое в qint64 с соответствующим UTC знаком
     qint64 UTCtoInt = UTC->time().hour();
     if (UTCPlusMinus->text() == "-") UTCtoInt = UTCtoInt * (-1);
 
-    //установить дату эталонного UTC (+3)
-    if (UTCtoInt <= 3) NewTimeEtalon = RestartDateTime.addSecs(( 3-UTCtoInt/*Т.к. эталоном считается время мск (+3 UTC), то вычесть 3*/ ) *60 *60  );
-    else NewTimeEtalon = RestartDateTime.addSecs(-( UTCtoInt-3/*Т.к. эталоном считается время мск (+3 UTC), то вычесть 3*/ ) *60 *60  );
+    // Установить дату эталонного UTC (+3)
+    if (UTCtoInt <= 3) NewTimeEtalon = RestartDateTime.addSecs(( 3-UTCtoInt/* Т.к. эталоном считается время Мск (+3 UTC), то вычесть 3 */ ) *60 *60  );
+    else NewTimeEtalon = RestartDateTime.addSecs(-( UTCtoInt-3/* Т.к. эталоном считается время Мск (+3 UTC), то вычесть 3 */ ) *60 *60  );
 
-    //смещать эталонный тайм артефакта на UTC часов
+    // Смещать эталонный тайм артефакта на UTC часов
 
-    //Проверка, смещается ли эталонный день
+    // Проверка, смещается ли эталонный день
     QDateTime BufDateTimeForEtalon = NewTimeEtalon;
     BufDateTimeForEtalon.setTime( VezaNovayaEtalon );
-    BufDateTimeForEtalon = BufDateTimeForEtalon.addSecs( (UTCtoInt-3/*Т.к. эталоном считается время мск (+3 UTC), то вычесть 3*/ ) *60 *60  );
+    BufDateTimeForEtalon = BufDateTimeForEtalon.addSecs( (UTCtoInt-3/* Т.к. эталоном считается время Мск (+3 UTC), то вычесть 3 */ ) *60 *60  );
 
-    //Установка даты для колонок таблицы
+    // Установка даты для колонок таблицы
     BufDateTimeForColumn = BufDateTimeForEtalon;
 
-    //хранит, чему равен текущий день
+    // Хранит, чему равен текущий день
     qint64 BufMinusNew = 0;
     if (BufDateTimeForEtalon.date().day() < NewTimeEtalon.date().day()) BufMinusNew = -1;
     if(BufDateTimeForEtalon.date().day() > NewTimeEtalon.date().day()) BufMinusNew = 1;
@@ -37,9 +37,9 @@ void VezaNovaya :: organization(QDateTime RestartDateTime, QTableWidget *Table, 
 
     NewTimeEtalon = NewTimeEtalon.addDays( BufMinusNew );
 
-    NewTimeEtalon.setTime( VezaNovayaEtalon.addSecs( (UTCtoInt-3/*Т.к. эталоном считается время мск (+3 UTC), то вычесть 3*/ ) *60 *60) );
+    NewTimeEtalon.setTime( VezaNovayaEtalon.addSecs( (UTCtoInt-3/* Т.к. эталоном считается время Мск (+3 UTC), то вычесть 3 */ ) *60 *60) );
 
-    //Формирование эталонного времени с учетом аккумулятора
+    // Формирование эталонного времени с учетом аккумулятора
     qint64 AccumInSecs = AccumCurrentTime->time().second() + (AccumCurrentTime->time().minute())*60;
     if ( isPlusAccum->text() == "+" ) NewTimeEtalon = NewTimeEtalon.addSecs(AccumInSecs);
     else NewTimeEtalon = NewTimeEtalon.addSecs( - AccumInSecs);
@@ -51,7 +51,7 @@ void VezaNovaya :: organization(QDateTime RestartDateTime, QTableWidget *Table, 
 
     int i=0, j=0;
 
-    //Проход по неделям
+    // Проход по неделям
     while(j<7){
         int CheckDate = NewTimeEtalon.date().day()+1;
         int CheckMonth = NewTimeEtalon.date().month()+1;
@@ -60,7 +60,7 @@ void VezaNovaya :: organization(QDateTime RestartDateTime, QTableWidget *Table, 
 
         i=0;
 
-        //Итерация подсчета таймингов, пока не будет след. день
+        // Итерация подсчета таймингов, пока не будет след. день
         while( (NewTimeEtalon.date().day() != CheckDate) && (NewTimeEtalon.date().month() != CheckMonth) ){
 
 
@@ -80,22 +80,22 @@ void VezaNovaya :: organization(QDateTime RestartDateTime, QTableWidget *Table, 
         BufDateTimeForColumn=BufDateTimeForColumn.addDays(1);
     };
 
-    //Формирование дней недели таблицы (заголовки столбцов)
+    // Формирование дней недели таблицы (заголовки столбцов)
     Table->setHorizontalHeaderLabels(CurrentWeek);
 
-    //Формирование Даты/Времени респа ближайшего артефакта (1 строка 1 столбец)
+    // Формирование Даты/Времени респа ближайшего артефакта (1 строка 1 столбец)
 
-    //Время респа ближайшего артефакта - берется из таблицы
+    // Время респа ближайшего артефакта - берется из таблицы
     QTime TestTimeForFirstTableItem = TestTimeForFirstTableItem.fromString( Table->item(0,0)->text() );
 
-    //Дата респа ближайшего артефакта - берется из таблицы
-    //(необходима, т.к. столбцы таблицы не хранят время года. Год берется из BufDateTimeForColumn -7 дней)
+    /* Дата респа ближайшего артефакта - берется из таблицы
+     * (необходима, т.к. столбцы таблицы не хранят время года. Год берется из BufDateTimeForColumn -7 дней) */
     QDate TestDateForFirstTableItem =
             TestDateForFirstTableItem.fromString( BufDateTimeForColumn.addDays
-                                                  (-7 /*-7 потому что нужен первый день в таблице*/ ).toString("yyyy ")
+                                                  (-7 /* -7, потому что нужен первый день в таблице */ ).toString("yyyy ")
                                                   + Table->horizontalHeaderItem(0)->text(), "yyyy ddd dd MMM");
 
-    //Общая Дата/Время, которые и будут сравниваться со временем компьютера
+    // Общая Дата/Время, которые и будут сравниваться со временем компьютера
     QDateTime TestAll;
 
     TestAll.setDate(TestDateForFirstTableItem);
@@ -103,8 +103,8 @@ void VezaNovaya :: organization(QDateTime RestartDateTime, QTableWidget *Table, 
 
     //qDebug() << TestAll;
 
-    //Если разница между Датой/Временем компьютера и Датой/Временем респа ближайшего артефакта (1 строка 1 столбец)
-    //час или меньше, то отметить указанное поле зеленым
+    /* Если разница между Датой/Временем компьютера и Датой/Временем респа ближайшего артефакта (1 строка 1 столбец)
+     * час или меньше, то отметить указанное поле зеленым */
     if( QDateTime :: currentDateTime().secsTo( TestAll ) <= AlertTime.minute()*60 /* 59 минут по умолчанию, можно сменить на сколько угодно */ )
         Table->item(0,0)->setTextColor(Qt :: darkGreen);
 

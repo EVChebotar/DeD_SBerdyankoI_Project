@@ -3,17 +3,17 @@
 void Accumulator :: Summ(QLineEdit *isPlus, QTimeEdit *AddTime, QTimeEdit *AccumCurrentTime, QLineEdit *isPlusAccum){
 
     QTime
-            //Хранит сумму аккумулятора и введенного времени корректировки
+            // Хранит сумму аккумулятора и введенного времени корректировки
             Summ,
 
-            //Час для проверки максимально возможного времени
+            // Час для проверки максимально возможного времени
             HourTime;
 
     qint64
-            // хранит время корректировки в секундах
+            // Хранит время корректировки в секундах
             SecsCorrect = ( (AddTime->time().minute() )*60 + AddTime->time().second() ),
 
-            // хранит время аккумулятора в секундах
+            // Хранит время аккумулятора в секундах
             SecsAccum = ( (AccumCurrentTime->time().minute() )*60 + AccumCurrentTime->time().second() );
 
     Summ.setHMS(0,0,0);

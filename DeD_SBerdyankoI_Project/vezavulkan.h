@@ -20,10 +20,10 @@ private :
 public :
     explicit VezaVulkan(){
 
-        //Установка тайминга Везувия Вулкан
+        // Установка тайминга Везувия Вулкан
         VezaVulkanTime.setHMS(05,21,30);
 
-        //Установка эталонного времени по +0 UTC
+        // Установка эталонного времени по +0 UTC
         VezaVulkanEtalon.setHMS(02,57,20);
 
     }
