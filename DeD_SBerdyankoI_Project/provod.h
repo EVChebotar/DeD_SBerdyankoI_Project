@@ -16,6 +16,7 @@ class Provod
 private :
     QTime ProvodTime;
     QTime ProvodEtalon;
+
 public :
     explicit Provod(){
 
@@ -24,21 +25,6 @@ public :
 
         //Установка эталонного времени по +0 UTC
         ProvodEtalon.setHMS(02,54,00);
-/*
-        //Установка эталонного времени по +0 UTC
-        ProvodEtalon.setHMS(23,55,00);
-
-        //Инициализация промежуточного QDateTime, который впоследствии будет равен эталонному времени по нужному utc (дата не важна)
-        QDateTime UtcTime = QDateTime :: currentDateTime();
-
-        //Переменная, хранящаяя значение UTC системы в секундах
-        qint64 utc = UtcTime.offsetFromUtc();
-
-        UtcTime.setTime(ProvodEtalon);
-        UtcTime = UtcTime.addSecs(utc);
-
-        ProvodEtalon.setHMS( UtcTime.time().hour(), UtcTime.time().minute(), UtcTime.time().second() );
-        //qDebug() << ProvodEtalon;*/
 
     }
 

@@ -16,6 +16,7 @@ class VezaNovaya
 private :
     QTime VezaNovayaTime;
     QTime VezaNovayaEtalon;
+
 public :
     explicit VezaNovaya(){
 
@@ -24,21 +25,6 @@ public :
 
         //Установка эталонного времени по +0 UTC
         VezaNovayaEtalon.setHMS(02,58,20);
-/*
-        //Установка эталонного времени по +0 UTC
-        VezaNovayaEtalon.setHMS(23,58,30);
-
-        //Инициализация промежуточного QDateTime, который впоследствии будет равен эталонному времени по нужному utc (дата не важна)
-        QDateTime UtcTime = QDateTime :: currentDateTime();
-
-        //Переменная, хранящаяя значение UTC системы в секундах
-        qint64 utc = UtcTime.offsetFromUtc();
-
-        UtcTime.setTime(VezaNovayaEtalon);
-        UtcTime = UtcTime.addSecs(utc);
-
-        VezaNovayaEtalon.setHMS( UtcTime.time().hour(), UtcTime.time().minute(), UtcTime.time().second() );
-        //qDebug() << VezaNovayaEtalon;*/
 
     }
 

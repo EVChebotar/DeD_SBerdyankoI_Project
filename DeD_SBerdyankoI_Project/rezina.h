@@ -14,6 +14,7 @@ class Rezina
 
 private :
     QTime RezinaTime;
+
 public :
     explicit Rezina(){
 
