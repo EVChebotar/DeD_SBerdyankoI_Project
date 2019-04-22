@@ -1,0 +1,38 @@
+
+Создаем резервную копию исходников Qt, они находятся в «Qt\5.**.*\Src»
+Теперь запускаем терминал Qt — Qt 5.* for Desktop (MinGW *.*.* **-bit), он находится
+в «Все программы -> Qt -> MinGW *.*.* (**-bit))» или же полным путем "%appdata%\Microsoft\Windows\Start Menu\Programs\Qt\5.**.*\MinGW *.*.* (**-bit)"
+
+Находим qmake.conf в папке Src (Директория ниже!) :
+
+D:\Qt\5.**.*\Src\qtbase\mkspecs\win32-g++
+
+Делаем изменения в qmake.conf :
+
+QMAKE_LFLAGS += -static -static-libgcc
+DEFINES += UNICODE QT_STATIC_BUILD
+
+Переходим в директорию с исходниками Qt, вводим команду в терминале :
+
+cd X:\Qt\5.12.3\Src\
+
+Конфигурируем этап установки, вводя команду, где путь после -prefix, местоположение комплекта сборки
+
+configure -static -platform win32-g++ -prefix "D:\Qt\5.12.3_Static" -debug-and-release -opensource -confirm-license -opengl desktop -no-angle -make libs -qt-zlib -qt-pcre -qt-libpng -qt-libjpeg -qt-freetype
+
+По завершению конфигурирования, начинаем компиляцию исходников Qt, командой
+
+mingw32-make
+
+После компиляции, будет несколько ошибок, не обращаем на них вниманиу, они никак не скажутся на нашей сборке.
+Копируем файлы в указанный нами каталог на этапе конфигурирования, командой
+
+mingw32-make install
+
+После копирования, так же будет несколько ошибок, не обращаем на них внимание.
+Теперь восстанавливаем резервные копии исходников Qt и qmake.conf
+
+
+#Мой конфиг (выше тоже он)
+
+configure -static -platform win32-g++ -prefix "D:\Qt\5.12.3_Static" -debug-and-release -opensource -confirm-license -opengl desktop -no-angle -make libs -qt-zlib -qt-pcre -qt-libpng -qt-libjpeg -qt-freetype
